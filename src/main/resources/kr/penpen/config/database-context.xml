@@ -11,14 +11,12 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
     
-    <context:property-placeholder location="classpath:kr/penpen/config/database.properties" />
-
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="${db.url}" />
-		<property name="username" value="${db.username}" />
-		<property name="password" value="${db.password}" />
+		<property name="driverClass" value="org.hsqldb.jdbc.JDBCDriver" />
+		<property name="url" value="jdbc:hsqldb:mem:testdb" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
 	</bean>
 
 	<!-- JPA settings -->
@@ -38,13 +36,12 @@
 		</property>
 		<property name="jpaProperties"> <!-- 하이버네이트 상세 설정 -->
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop> <!-- 방언 -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop> <!-- 방언 -->
 				<prop key="hibernate.show_sql">true</prop>                   <!-- SQL 보기 -->
 				<prop key="hibernate.format_sql">true</prop>                 <!-- SQL 정렬해서 보기 -->
 				<prop key="hibernate.use_sql_comments">true</prop>           <!-- SQL 코멘트 보기 -->
 				<prop key="hibernate.id.new_generator_mappings">true</prop>  <!-- 새 버전의 ID 생성 옵션 -->
 				<prop key="hibernate.hbm2ddl.auto">create</prop>             <!-- DDL 자동 생성 -->
-				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop> <!-- /*Naming Strategy -> Underscore */ -->
 			</props>
 		</property>
 	</bean>

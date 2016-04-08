@@ -41,12 +41,13 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
-		<!-- Mysql Database -->
+		<!-- Database -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.35</version>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.3.2</version>
 		</dependency>
+
 
 		<!-- ETC -->
 		<!-- 로깅 SLF4J & LogBack -->
