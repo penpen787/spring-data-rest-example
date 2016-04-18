@@ -1,29 +1,33 @@
-package kr.penpen.domain;
+package com.khjeon.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.springframework.data.rest.core.annotation.RestResource;
 
 @Entity
-public class Article {
+public class Comment {
 
 	@Id	@GeneratedValue
 	private int id;
 
 	private String nickname;
 
+	@RestResource(exported = false)
 	private String password;
 
 	private String content;
+	
+	private Date addDate = new Date();
 
-	private Date addDate = new Date();;
-
-	@OneToMany(mappedBy = "article")
-	private List<Comment> comments;
+	@ManyToOne
+	@JoinColumn(name = "ARTICLE_ID")
+	private Article article;
 
 	// Getters & Setters
 	public int getId() {
@@ -58,19 +62,19 @@ public class Article {
 		this.content = content;
 	}
 
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+
 	public Date getAddDate() {
 		return addDate;
 	}
 
 	public void setAddDate(Date addDate) {
 		this.addDate = addDate;
-	}
-
-	public List<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
 	}
 }

@@ -48,7 +48,6 @@
 			<version>2.3.2</version>
 		</dependency>
 
-
 		<!-- ETC -->
 		<!-- 로깅 SLF4J & LogBack -->
 		<dependency>
@@ -63,7 +62,6 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
-
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
