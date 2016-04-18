@@ -16,13 +16,11 @@
 		<!-- JPA, 하이버네이트 버전 -->
 		<spring.data.jpa>1.9.4.RELEASE</spring.data.jpa>
 		<hibernate.version>4.3.10.Final</hibernate.version>
-		<!-- 데이터베이스 버전 -->
-		<h2db.version>1.4.187</h2db.version>
 		<!-- 로거 버전 -->
 		<logback.version>1.1.1</logback.version>
 		<slf4j.version>1.7.6</slf4j.version>
 	</properties>
-
+ㅈ
 	<dependencies>
 		<!-- JPA, 하이버네이트 -->
 		<dependency>

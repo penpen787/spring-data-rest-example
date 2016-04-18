@@ -7,7 +7,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath*:kr/penpen/config/database-context.xml
+			classpath*:com/khjeon/config/database-context.xml
 		</param-value>
 	</context-param>
 	<listener>

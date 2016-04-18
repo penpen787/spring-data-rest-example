@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import org.springframework.data.rest.core.annotation.RestResource;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Comment {
@@ -18,7 +18,7 @@ public class Comment {
 
 	private String nickname;
 
-	@RestResource(exported = false)
+	@JsonIgnore
 	private String password;
 
 	private String content;

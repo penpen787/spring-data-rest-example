@@ -48,6 +48,6 @@
 		</property>
 	</bean>
 
-	<jpa:repositories base-package="kr.penpen" entity-manager-factory-ref="entityManagerFactory" />
+	<jpa:repositories base-package="com.khjeon" entity-manager-factory-ref="entityManagerFactory" />
 
 </beans>	

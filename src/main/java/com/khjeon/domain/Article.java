@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.springframework.data.rest.core.annotation.RestResource;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Article {
@@ -18,7 +18,7 @@ public class Article {
 
 	private String nickname;
 
-	@RestResource(exported = false)
+	@JsonIgnore
 	private String password;
 
 	private String content;
