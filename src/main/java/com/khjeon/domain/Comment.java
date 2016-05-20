@@ -18,7 +18,7 @@ public class Comment {
 
 	private String nickname;
 
-	@JsonIgnore
+	@JsonIgnore // 비밀번호는 client에 전달이 안되도록 한다.(jackson annotation)
 	private String password;
 
 	private String content;
